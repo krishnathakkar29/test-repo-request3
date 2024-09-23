@@ -5,7 +5,7 @@ const PlayerScoreCard = (props) => {
     <>
       <tr className={`player-score-card ${props.header && "table-head"}`}>
         <td
-          className={`w-1/3 py-3 text-center tracking-wider ${
+          className={`w-1/3 py-3 text-xl text-center tracking-wider font-bold text-opacity ${
             props.header
               ? "text-5xl font-MarvelFont text-[#F4F6F595]"
               : "text-xl md:text-2xl font-KronaOne text-[#D9D9D9]"
@@ -14,7 +14,7 @@ const PlayerScoreCard = (props) => {
           {props.player.name}
         </td>
         <td
-          className={`w-1/3 py-3 text-center ${
+          className={`w-1/3 py-3 text-xl text-center ${
             props.header
               ? "text-5xl font-MarvelFont text-[#F4F6F595] tracking-wider"
               : "text-xl md:text-2xl font-KronaOne text-[#D9D9D9]"
@@ -23,7 +23,7 @@ const PlayerScoreCard = (props) => {
           {props.player.score}
         </td>
         <td
-          className={`name w-1/3 py-3 text-center ${
+          className={`name w-1/3 py-3 text-xl text-center ${
             props.header
               ? "text-5xl font-MarvelFont text-[#F4F6F595] tracking-wider"
               : "text-xl md:text-2xl font-KronaOne text-[#D9D9D9]"

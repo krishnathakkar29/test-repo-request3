@@ -7,6 +7,18 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			Goldman: ["Goldman", "sans-serif"]
+		},
+		rotate:{
+			"135":"135deg",
+			"225": "225deg",
+			"270":"270deg",
+			"315":"315deg"
+		  },
+		  animation:{
+			"spinner":"spin 3s linear infinite"
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

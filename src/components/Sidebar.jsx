@@ -6,7 +6,13 @@ import {
   User,
 } from "lucide-react";
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+import sidebarBg from "../assets/sidebar-bg.png";
+import HomeLogo from "../assets/Home.png";
+import whiteSpider from "../assets/whiteSpider.png";
+import arcReact from "../assets/arcReact.png";
+import capShield from "../assets/capShield.png";
 
 const SidebarLink = ({ href, icon: Icon, label }) => {
   const pathname = useLocation();
@@ -17,12 +23,12 @@ const SidebarLink = ({ href, icon: Icon, label }) => {
   return (
     <Link to={href}>
       <div
-        className={`cursor-pointer flex items-center justify-start px-8 py-4 hover:text-blue-500 hover:bg-blue-100 gap-3 transition-colors ${
-          isActive ? "bg-blue-200 text-white" : ""
+        className={`cursor-pointer flex items-center justify-start px-8 py-4 hover:text-blue-500 hover:bg-blue-100 gap-3 transition-colors text-white ${
+          isActive ? "bg-blue-200 " : ""
         }`}
       >
         <Icon className="w-6 h-6 !text-gray-700" />
-        <span className="block font-medium text-gray-700">{label}</span>
+        <span className="block font-medium text-white">{label}</span>
       </div>
     </Link>
   );
@@ -30,27 +36,46 @@ const SidebarLink = ({ href, icon: Icon, label }) => {
 
 function Sidebar() {
   const sidebarClassNames = `fixed w-64 flex flex-col transition-all duration-300 overflow-hidden h-full shadow-md z-40`;
-
+const {pathname} = useLocation()
   return (
-    <div className={sidebarClassNames}>
+    <>
+    <div className="fixed w-64 flex flex-col transition-all duration-300 overflow-hidden h-full shadow-md z-40 font-Goldman" style={{backgroundImage: `url(${sidebarBg})`}}>
+    <div className="bg-black bg-opacity-70 h-full w-full absolute z-20"></div>
       <div className="flex gap-3 justify-start items-center pt-8">
-        <h1 className="font-extrabold text-2xl px-8">Hello</h1>
+        <h1 className="font-extrabold text-2xl px-8 z-30">
+          <img src={logo} alt="Logo" />
+        </h1>
       </div>
 
       {/* Sidebar Links */}
-      <div className="flex-grow mt-8">
-        <SidebarLink
+      <div className="flex-grow mt-8 flex flex-col justify-start items-center gap-4">
+        {/* <SidebarLink
           href="/team/spidey_squad"
           icon={Layout}
           label="Spiderman"
         />
-        <SidebarLink href="/team/tony_techies" icon={Archive} label="IronMan" />
+        <SidebarLink href="/team/tony_techies" icon={Archive} label="IronMan" className="text-white" />
         <SidebarLink href="/team/cap_crusader" icon={Clipboard} label="Cap" />
         <SidebarLink
           href="/team/odinson_olympians"
           icon={User}
           label="Odinson"
-        />
+        /> */}
+        <NavLink to="/team/home" className="text-white font-Goldman flex justify-between items-center bg-[#89E4FF30] rounded-3xl text-xl w-4/5 p-3 z-30 drop-shadow-md h-16 pr-6">
+          <img src={HomeLogo} alt="Home Logo" className="scale-[0.8]" />Home
+        </NavLink>
+        <NavLink to="/team/spidey_squad" className="text-white font-Goldman flex justify-between items-center bg-[#89E4FF30] rounded-3xl text-xl w-4/5 p-3 z-30 h-16 drop-shadow-md">
+          <img src={whiteSpider} className="scale-[0.8]" alt="Home Logo"/>Spider-Man
+        </NavLink>
+        <NavLink to="/team/tony_techies" className="text-white font-Goldman flex justify-between items-center bg-[#89E4FF30] rounded-3xl text-xl w-4/5 p-3 z-30 h-16">
+          <img src={arcReact} alt="Home Logo" /> Iron Man
+        </NavLink>
+        <NavLink to="/team/cap_crusader" className="text-white font-Goldman flex justify-between items-center bg-[#89E4FF30] rounded-3xl text-sm w-4/5 p-3 z-30 h-16">
+          <img src={capShield} className="h-12 w-12" alt="Home Logo" /> Captain America
+        </NavLink>
+        <NavLink to="/team/odinson_olympians" className="text-white font-Goldman flex justify-between items-center bg-[#89E4FF30] rounded-3xl text-xl w-4/5 p-3 z-30 h-16">
+          <img src={HomeLogo} alt="Home Logo" className="scale-[0.8]" />Home
+        </NavLink>
       </div>
 
       {/* Footer */}
@@ -58,6 +83,7 @@ function Sidebar() {
         <p className="text-center text-xs text-gray-500">&copy; 2024 Edstock</p>
       </div>
     </div>
+    </>
   );
 }
 
