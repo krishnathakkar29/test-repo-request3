@@ -63,7 +63,7 @@
 //   }, [teamName]);
 
 //   // <div className="opaque-bg w-full h-full bg-black opacity-10 absolute"></div>
-//   //       <div className={`bg-container bg-opacity-90 w-full h-full`}></div>
+//   //       <div className={bg-container bg-opacity-90 w-full h-full}></div>
 //   return (
 //     <>
 //       {!allScores[team] || loading ? (
@@ -75,7 +75,7 @@
 //           {/* ${!allScores[team] && "hidden"} */}
 //           <div className="opaque-bg h-full w-full bg-black opacity-40 fixed z-20"></div>
 //           <div
-//             className={`bg-container bg-opacity-90 w-full h-full min-h-screen overflow-auto bg-fixed bg-cover bg-no-repeat object-cover m-0 scrollbar-hide md:pl-32 flex flex-col justify-center items-center`}
+//             className={bg-container bg-opacity-90 w-full h-full min-h-screen overflow-auto bg-fixed bg-cover bg-no-repeat object-cover m-0 scrollbar-hide md:pl-32 flex flex-col justify-center items-center}
 //           >
 //             <div
 //               className={`team-header flex md:flex-row justify-center sm:justify-between mx-auto w-11/12 md:w-4/5 border-b-4 border-b-[#F4F6F595] ${
@@ -203,24 +203,24 @@ const Scores = () => {
         </>
       ) : (
         <>
-          <div className="opaque-bg h-full w-full bg-black opacity-60 fixed z-20"></div>
+          <div className="opaque-bg h-full w-full bg-black opacity-60 fixed z-10"></div>
           <div
             className={`bg-container bg-opacity-90 w-full h-full min-h-screen overflow-auto bg-fixed bg-cover bg-no-repeat object-cover m-0 scrollbar-hide md:pl-32 flex flex-col justify-center items-center`}
           >
             <div
-              className={`team-header flex md:flex-row justify-center sm:justify-between mx-auto w-11/12 md:w-4/5 border-b-4 border-b-[#F4F6F595] ${
+              className={`team-header flex md:flex-row justify-center sm:justify-between mx-auto w-11/12 md:w-4/5 border-b-4 z-30 border-b-[#F4F6F595] ${
                 !allScores[team] && "hidden"
               }`}
             >
-              <h1 className="team-name max-w-96 text-4xl md:text-5xl font-bold text-center py-4 tracking-widest self-center flex flex-wrap justify-center gap-2">
-                <span className="team-fname sm:h-8 lg:h-12 sm:text-2xl lg:text-5xl bg-red-700 inline-flex justify-center font-MarvelFont text-white">
+              <h1 className="team-name z-30 max-w-96 text-4xl md:text-5xl font-bold text-center py-4 tracking-widest self-center flex flex-wrap justify-center gap-2">
+                <span className="team-fname z-30 sm:h-8 lg:h-12 sm:text-2xl lg:text-5xl bg-red-700 inline-flex justify-center font-MarvelFont text-white">
                   {team.split("_")[0]?.toUpperCase()}
                 </span>
                 <span className="team-lname sm:h-8 lg:h-12 sm:text-2xl lg:text-5xl inline-flex justify-center font-MarvelFont text-[#838383] border-t-4 border-b-4 border-[#838383]">
                   {team.split("_")[1]?.toUpperCase()}
                 </span>
               </h1>
-              <div className="jarvis hidden sm:flex justify-center items-center gap-2">
+              <div className="jarvis z-30 hidden sm:flex justify-center items-center gap-2">
                 <img
                   src={jarvisImg}
                   alt="jarvis"
@@ -239,7 +239,7 @@ const Scores = () => {
                 !allScores[team] && "hidden"
               }`}
             >
-              <table className="player-scores w-full md:w-4/5">
+              <table className="player-scores w-full md:w-4/5 z-30">
                 <thead>
                   <PlayerScoreCard
                     header={true}
