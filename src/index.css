@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   overflow: visible; */
   background-image: url("./assets/leaderboard-bg.gif");
+  /* opacity: 0.9; */
   /* background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,6 +36,8 @@ body {
   opacity: 100%;
   text-decoration: underline;
 }
+
+
 
 @layer base {
   :root {
